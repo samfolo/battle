@@ -28,3 +28,7 @@ get '/dog' do
   @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
+
+post '/handle-form' do
+  'Cheers'
+end

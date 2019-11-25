@@ -8,7 +8,26 @@
   <title>CATS</title>
 </head>
 <body>
-  <h1>My name is <%= @name %>! I am <%= @age %> years old..</h1>
+  <% if @name == "" && @age %>
+    <h1>My name is cat! I am <%= @age %> years old..</h1>
+  <% elsif @name && @age == "" %>
+    <h1>My name is <%= @name %>! I am a couple of years old..</h1>
+  <% else %>
+    <h1>My name is <%= @name %>! I am <%= @age %> years old..</h1>
+  <% end %>
+
   <img src="http://bit.ly/1eze8aE" height="500px" style="border: 5px dashed red;"/>
+
+  <form action="/named-cat" method="get"/>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" name="name">
+      <input type="text" placeholder="age" name="age">
+    </div>
+    <div>
+      <input type="submit" id="submit_button" value="Submit">
+    </div>
+  </form>
+  
 </body>
 </html>
