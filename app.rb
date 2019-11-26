@@ -1,8 +1,9 @@
 require 'sinatra'
 
 class Battle < Sinatra::Base
-end
+  get '/' do
+    'Hello Battle!'
+  end
 
-get '/' do
-  'Hello Battle!'
+  run! if app_file == $0
 end
